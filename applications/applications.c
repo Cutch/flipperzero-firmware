@@ -49,6 +49,7 @@ extern int32_t file_browser_app(void* p);
 // Plugins
 extern int32_t music_player_app(void* p);
 extern int32_t snake_game_app(void* p);
+extern int32_t falling_blocks_app(void* p);
 
 // On system start hooks declaration
 extern void bt_on_system_start();
@@ -339,6 +340,14 @@ const FlipperApplication FLIPPER_PLUGINS[] = {
     {.app = music_player_app,
      .name = "Music Player",
      .stack_size = 2048,
+     .icon = &A_Plugins_14,
+     .flags = FlipperApplicationFlagDefault},
+#endif
+
+#ifdef APP_FALLING_BLOCKS
+    {.app = falling_blocks_app,
+     .name = "Falling Blocks",
+     .stack_size = 1024,
      .icon = &A_Plugins_14,
      .flags = FlipperApplicationFlagDefault},
 #endif
